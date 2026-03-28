@@ -67,7 +67,7 @@ const HeroSection = () => (
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
             <a
-              href="#preco"
+              href="https://www.baton.pt/"
               className="flex-1 bg-ivory text-rose-deep font-bold text-base px-6 py-3.5 rounded-full shadow-elevated hover:scale-105 transition-transform text-center"
             >
               Garante a tua vaga — 27,99€

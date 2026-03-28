@@ -72,7 +72,7 @@ const PricingSection = () => (
 
           {/* CTA */}
           <a
-            href="https://www.baton.pt/"
+            href="https://batonpt.systeme.io/"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full bg-rose text-ivory font-bold text-lg py-4 rounded-full text-center shadow-rose hover:scale-105 transition-transform"

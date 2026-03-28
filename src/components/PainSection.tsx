@@ -63,6 +63,8 @@ const PainSection = () => (
         </p>
         <a
           href="https://www.baton.pt/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-rose-deep text-ivory font-bold px-8 py-4 rounded-full shadow-elevated hover:scale-105 transition-transform"
         >
           Quero mudar agora — 27,99€ 💄

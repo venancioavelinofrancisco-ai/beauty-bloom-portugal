@@ -10,27 +10,36 @@ const HeroSection = () => (
     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ivory/40 to-transparent" />
 
     <div className="container relative z-10 py-16 md:py-24">
+      {/* Centered title block */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center mb-12"
+      >
+        <span className="inline-block bg-ivory/20 text-ivory text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-ivory/30">
+          🇵🇹 Exclusivo para Portugal
+        </span>
+
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <span className="text-ivory">Põe-te bonita</span>
+          <br />
+          <span className="text-noir">à tua maneira</span>
+        </h1>
+
+        <p className="text-noir/70 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+          Aprende automaquiagem passo a passo, com vídeos curtos e produtos que encontras na{" "}
+          <strong className="text-ivory">Primor, Wells e Sephora</strong>.
+        </p>
+      </motion.div>
+
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="flex flex-col items-center lg:items-start"
         >
-          <span className="inline-block bg-ivory/20 text-ivory text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-ivory/30">
-            🇵🇹 Exclusivo para Portugal
-          </span>
-
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            <span className="text-ivory">Põe-te bonita</span>
-            <br />
-            <span className="text-noir">à tua maneira</span>
-          </h1>
-
-          <p className="text-noir/70 text-lg md:text-xl max-w-lg mb-8 leading-relaxed">
-            Aprende automaquiagem passo a passo, com vídeos curtos e produtos que encontras na{" "}
-            <strong className="text-ivory">Primor, Wells e Sephora</strong>.
-          </p>
-
           {/* Urgency banner */}
           <motion.div
             animate={{ scale: [1, 1.02, 1] }}
@@ -42,6 +51,17 @@ const HeroSection = () => (
               <strong className="text-urgency">⚠️ ÚLTIMAS 17 VAGAS</strong> — O preço sobe em breve!
             </p>
           </motion.div>
+
+          {/* Pain points teaser */}
+          <div className="bg-ivory/15 border border-ivory/25 rounded-2xl p-5 mb-6 max-w-md backdrop-blur-sm">
+            <p className="text-ivory font-display text-base font-semibold mb-3">Sentes que...</p>
+            <ul className="space-y-2 text-ivory/80 text-sm">
+              <li className="flex items-start gap-2"><span className="text-urgency">💔</span> Gastas dinheiro em produtos que não funcionam?</li>
+              <li className="flex items-start gap-2"><span className="text-urgency">😰</span> Nunca ficas satisfeita com o resultado?</li>
+              <li className="flex items-start gap-2"><span className="text-urgency">⏰</span> Demoras demasiado e sais frustrada?</li>
+            </ul>
+            <p className="text-ivory font-bold text-sm mt-3">Este curso resolve tudo isso. 💄</p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -67,13 +87,13 @@ const HeroSection = () => (
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           className="relative"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-rose border border-ivory/30">
             <img
               src={heroImg}
-              alt="Mulher negra a maquilhar-se"
+              alt="Mulher a maquilhar-se"
               width={1280}
               height={720}
               className="w-full h-auto object-cover"

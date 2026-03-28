@@ -62,7 +62,7 @@ const PainSection = () => (
           "Chega de te sentires frustrada. Mereces sentir-te linda todos os dias."
         </p>
         <a
-          href="https://batonpt.systeme.io/"
+          href="https://www.baton.press/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-rose-deep text-ivory font-bold px-8 py-4 rounded-full shadow-elevated hover:scale-105 transition-transform"

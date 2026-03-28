@@ -79,18 +79,22 @@ const VSLSection = () => {
         >
           <div className="relative rounded-3xl overflow-hidden shadow-rose border-2 border-ivory/50">
             <div className="relative aspect-video bg-noir">
-              <iframe
-                src="https://www.youtube.com/embed/QnKcGfeS63Q?rel=0&modestbranding=1&showinfo=0"
-                title="VSL — Tutorial de Automaquiagem"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full"
+              <video
+                src="/automaquiagem-video.mp4"
+                controls={isPlaying}
+                playsInline
+                muted
+                className="absolute inset-0 w-full h-full object-cover"
               />
 
               {!isPlaying && (
                 <div
                   className="absolute inset-0 bg-noir/60 flex flex-col items-center justify-center cursor-pointer group z-10"
-                  onClick={() => setIsPlaying(true)}
+                  onClick={() => {
+                    setIsPlaying(true);
+                    const vid = document.querySelector('video');
+                    if (vid) { vid.muted = false; vid.play(); }
+                  }}
                 >
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}

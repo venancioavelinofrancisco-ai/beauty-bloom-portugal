@@ -10,7 +10,7 @@ const testimonials = [
 ];
 
 const BeforeAfterSection = () => (
-  <section id="resultados" className="py-20 bg-card">
+  <section id="resultados" className="py-20 bg-ivory">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ const BeforeAfterSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="bg-background rounded-3xl overflow-hidden shadow-card hover:shadow-elevated transition-shadow"
+            className="bg-background rounded-3xl overflow-hidden shadow-card border border-gold-light hover:shadow-gold transition-shadow"
           >
             <div className="relative">
               <img
@@ -45,10 +45,10 @@ const BeforeAfterSection = () => (
                 height={640}
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute top-3 left-3 bg-foreground/80 text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+              <div className="absolute top-3 left-3 bg-noir/80 text-ivory text-xs font-bold px-3 py-1 rounded-full">
                 Antes
               </div>
-              <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+              <div className="absolute top-3 right-3 bg-gradient-gold text-noir text-xs font-bold px-3 py-1 rounded-full">
                 Depois
               </div>
             </div>

@@ -8,7 +8,7 @@ const pains = [
 ];
 
 const PainSection = () => (
-  <section className="py-20 bg-card">
+  <section className="py-20 bg-ivory">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ const PainSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-secondary rounded-2xl p-6 hover:shadow-card transition-shadow"
+            className="bg-background rounded-2xl p-6 border border-gold-light hover:shadow-card hover:border-gold/30 transition-all"
           >
             <span className="text-4xl mb-4 block">{pain.emoji}</span>
             <h3 className="font-display text-xl font-bold text-foreground mb-2">{pain.title}</h3>

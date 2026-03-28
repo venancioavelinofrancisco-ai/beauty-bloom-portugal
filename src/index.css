@@ -6,52 +6,58 @@
 
 @layer base {
   :root {
-    --background: 340 30% 97%;
-    --foreground: 320 30% 15%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 320 30% 15%;
+    --card: 45 20% 98%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 320 30% 15%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 345 55% 52%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 43 90% 50%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 340 40% 95%;
-    --secondary-foreground: 345 55% 40%;
+    --secondary: 45 30% 94%;
+    --secondary-foreground: 43 70% 35%;
 
-    --muted: 340 20% 93%;
-    --muted-foreground: 320 15% 45%;
+    --muted: 45 15% 93%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 340 60% 92%;
-    --accent-foreground: 345 55% 35%;
+    --accent: 43 50% 90%;
+    --accent-foreground: 43 80% 30%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 340 30% 88%;
-    --input: 340 30% 88%;
-    --ring: 345 55% 52%;
+    --border: 43 25% 85%;
+    --input: 43 25% 85%;
+    --ring: 43 90% 50%;
 
     --radius: 1rem;
 
-    /* Custom tokens */
-    --rose-deep: 345 65% 38%;
-    --rose-glow: 340 80% 65%;
-    --cream: 30 40% 96%;
-    --gold: 38 80% 55%;
-    --gold-light: 40 70% 90%;
+    /* Custom tokens — elegant gold/black/white */
+    --gold-deep: 38 75% 40%;
+    --gold-glow: 43 95% 58%;
+    --gold-shimmer: 45 85% 70%;
+    --gold-light: 45 60% 92%;
+    --cream: 45 40% 96%;
+    --noir: 0 0% 8%;
+    --noir-soft: 0 0% 15%;
+    --ivory: 45 30% 98%;
     --urgency: 0 75% 50%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(340, 30%, 97%) 0%, hsl(340, 50%, 93%) 50%, hsl(345, 40%, 90%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(345, 55%, 52%), hsl(340, 80%, 65%));
-    --gradient-gold: linear-gradient(135deg, hsl(38, 80%, 55%), hsl(30, 90%, 65%));
-    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(340, 30%, 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 5%) 0%, hsl(0, 0%, 10%) 40%, hsl(38, 30%, 12%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(43, 90%, 50%), hsl(38, 85%, 60%));
+    --gradient-gold: linear-gradient(135deg, hsl(38, 80%, 45%), hsl(45, 90%, 60%), hsl(38, 80%, 45%));
+    --gradient-gold-shimmer: linear-gradient(135deg, hsl(45, 85%, 70%), hsl(43, 95%, 58%), hsl(38, 75%, 40%));
+    --gradient-card: linear-gradient(180deg, hsl(45, 20%, 98%) 0%, hsl(45, 30%, 95%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 5%) 0%, hsl(0, 0%, 12%) 100%);
 
-    --shadow-soft: 0 4px 20px -4px hsla(345, 55%, 52%, 0.15);
-    --shadow-card: 0 12px 40px -12px hsla(345, 55%, 52%, 0.12);
-    --shadow-elevated: 0 20px 50px -15px hsla(345, 55%, 52%, 0.2);
+    --shadow-soft: 0 4px 20px -4px hsla(43, 90%, 50%, 0.15);
+    --shadow-card: 0 12px 40px -12px hsla(43, 90%, 50%, 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsla(43, 90%, 50%, 0.25);
+    --shadow-gold: 0 0 40px -10px hsla(43, 95%, 58%, 0.35);
 
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'DM Sans', system-ui, sans-serif;
@@ -74,6 +80,13 @@
 }
 
 @layer utilities {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .text-gradient-primary {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -93,6 +106,14 @@
     background: var(--gradient-gold);
   }
 
+  .bg-gradient-gold-shimmer {
+    background: var(--gradient-gold-shimmer);
+  }
+
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -104,6 +125,10 @@
   .shadow-elevated {
     box-shadow: var(--shadow-elevated);
   }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
 }
 
 /* Countdown pulse */
@@ -114,6 +139,30 @@
 
 .animate-pulse-urgency {
   animation: pulse-urgency 2s ease-in-out infinite;
+}
+
+/* Gold shimmer sweep */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Heartbeat for urgency */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+  60% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
 }
 
 /* Smooth scroll */

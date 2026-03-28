@@ -21,9 +21,9 @@ const HeroSection = () => (
         </span>
 
         <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-5">
-          <span className="text-ivory">Põe-te bonita</span>
+          <span className="text-ivory drop-shadow-lg">Põe-te bonita</span>
           <br />
-          <span className="text-ivory/70">à tua maneira</span>
+          <span className="text-ivory drop-shadow-lg">à tua maneira</span>
         </h1>
 
         <p className="text-ivory/80 text-base md:text-lg max-w-xl mx-auto leading-relaxed">

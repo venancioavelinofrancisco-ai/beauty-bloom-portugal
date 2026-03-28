@@ -13,7 +13,7 @@ const items = [
 ];
 
 const WhatYouLearn = () => (
-  <section className="py-20 bg-cream">
+  <section className="py-20 bg-background">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -21,10 +21,10 @@ const WhatYouLearn = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-noir mb-4">
           O que vais aprender 🎓
         </h2>
-        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+        <p className="text-noir/60 text-lg max-w-xl mx-auto">
           Módulos práticos e curtos — aprendes ao teu ritmo, onde quiseres.
         </p>
       </motion.div>
@@ -37,12 +37,12 @@ const WhatYouLearn = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
-            className="flex items-start gap-3 bg-background rounded-xl p-4 shadow-soft border border-gold-light"
+            className="flex items-start gap-3 bg-ivory rounded-xl p-4 shadow-soft border border-ivory"
           >
-            <span className="flex-shrink-0 w-6 h-6 bg-gradient-gold rounded-full flex items-center justify-center mt-0.5">
-              <Check className="w-4 h-4 text-noir" />
+            <span className="flex-shrink-0 w-6 h-6 bg-rose rounded-full flex items-center justify-center mt-0.5">
+              <Check className="w-4 h-4 text-ivory" />
             </span>
-            <span className="text-foreground font-medium">{item}</span>
+            <span className="text-noir font-medium">{item}</span>
           </motion.div>
         ))}
       </div>

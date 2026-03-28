@@ -9,12 +9,12 @@ const VSLSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(340, 70%, 85%) 0%, hsl(340, 60%, 90%) 50%, hsl(340, 50%, 95%) 100%)" }}>
-      {/* Decorative gold accents */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
-      <div className="absolute top-20 right-10 w-64 h-64 rounded-full blur-3xl" style={{ background: "hsla(340, 60%, 70%, 0.2)" }} />
-      <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full blur-3xl" style={{ background: "hsla(43, 90%, 50%, 0.1)" }} />
+    <section className="py-20 bg-background relative overflow-hidden">
+      {/* Decorative accents */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ivory to-transparent opacity-60" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ivory to-transparent opacity-60" />
+      <div className="absolute top-20 right-10 w-64 h-64 bg-rose-light/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-48 h-48 bg-ivory/20 rounded-full blur-3xl" />
 
       <div className="container relative z-10">
         {/* Centered title */}
@@ -24,18 +24,18 @@ const VSLSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 bg-gold/20 text-gold-deep text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-gold/30">
+          <span className="inline-flex items-center gap-2 bg-ivory/40 text-rose-deep text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-ivory/50">
             <Sparkles className="w-3.5 h-3.5" /> Vê com os teus próprios olhos
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-noir mb-4 text-center">
-            Assiste à <span className="text-gradient-gold">transformação</span> em tempo real
+            Assiste à <span className="text-gradient-rose">transformação</span> em tempo real
           </h2>
           <p className="text-noir/60 text-lg max-w-2xl mx-auto text-center">
             Descobre como as nossas alunas passam de zero a deslumbrantes em minutos — com produtos que encontras na tua cidade.
           </p>
         </motion.div>
 
-        {/* Image gallery of women doing makeup */}
+        {/* Image gallery */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const VSLSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="relative rounded-2xl overflow-hidden shadow-elevated border-2 border-gold/30 group"
+              className="relative rounded-2xl overflow-hidden shadow-elevated border-2 border-ivory/50 group"
             >
               <img
                 src={item.src}
@@ -70,18 +70,18 @@ const VSLSection = () => {
           ))}
         </motion.div>
 
-        {/* Video embed */}
+        {/* Video embed — real makeup tutorial */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-gold border-2 border-gold/30">
+          <div className="relative rounded-3xl overflow-hidden shadow-rose border-2 border-ivory/50">
             <div className="relative aspect-video bg-noir">
               <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&showinfo=0"
-                title="VSL — Curso de Automaquiagem"
+                src="https://www.youtube.com/embed/QnKcGfeS63Q?rel=0&modestbranding=1&showinfo=0"
+                title="VSL — Tutorial de Automaquiagem"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full"
@@ -95,9 +95,9 @@ const VSLSection = () => {
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="w-20 h-20 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold mb-4 group-hover:scale-110 transition-transform"
+                    className="w-20 h-20 rounded-full bg-ivory flex items-center justify-center shadow-rose mb-4 group-hover:scale-110 transition-transform"
                   >
-                    <Play className="w-8 h-8 text-noir ml-1" fill="hsl(var(--noir))" />
+                    <Play className="w-8 h-8 text-rose-deep ml-1" fill="hsl(var(--rose-deep))" />
                   </motion.div>
                   <p className="text-ivory font-display text-xl font-bold">Carrega para assistir</p>
                   <p className="text-ivory/50 text-sm mt-1 flex items-center gap-2">
@@ -117,13 +117,13 @@ const VSLSection = () => {
             className="flex flex-wrap items-center justify-center gap-6 mt-8 text-noir/50 text-sm"
           >
             <span className="flex items-center gap-2">
-              <span className="text-gold">▶</span> 12.847 visualizações
+              <span className="text-rose">▶</span> 12.847 visualizações
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-gold">⭐</span> 4.9/5 de avaliação
+              <span className="text-rose">⭐</span> 4.9/5 de avaliação
             </span>
             <span className="flex items-center gap-2">
-              <span className="text-gold">💬</span> "Mudou a minha vida!"
+              <span className="text-rose">💬</span> "Mudou a minha vida!"
             </span>
           </motion.div>
         </motion.div>

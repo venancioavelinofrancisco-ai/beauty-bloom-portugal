@@ -72,7 +72,7 @@ const PricingSection = () => (
 
           {/* CTA */}
           <a
-            href="#"
+            href="https://www.baton.pt/"
             className="block w-full bg-rose text-ivory font-bold text-lg py-4 rounded-full text-center shadow-rose hover:scale-105 transition-transform"
           >
             Garante já a tua vaga! 💄

@@ -17,7 +17,7 @@ const HeroSection = () => (
         className="text-center max-w-3xl mx-auto mb-10"
       >
         <span className="inline-flex items-center gap-1.5 bg-ivory/20 text-ivory text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 border border-ivory/25">
-          🇵🇹 Exclusivo para Portugal
+          🇵🇹 Curso 100% Online — Exclusivo para Portugal
         </span>
 
         <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-5">
@@ -27,7 +27,7 @@ const HeroSection = () => (
         </h1>
 
         <p className="text-ivory/80 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-          Aprende automaquiagem passo a passo, com vídeos curtos e produtos que encontras na{" "}
+          Aprende automaquiagem <strong className="text-ivory">100% online</strong>, ao teu ritmo, com vídeos curtos e produtos que encontras na{" "}
           <strong className="text-ivory">Primor, Wells e Sephora</strong>.
         </p>
       </motion.header>
@@ -82,6 +82,7 @@ const HeroSection = () => (
 
           {/* Trust badges */}
           <div className="flex flex-wrap items-center gap-4 text-xs text-ivory/60 mt-1">
+            <span className="flex items-center gap-1"><Play className="w-3.5 h-3.5" /> 100% Online</span>
             <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5" /> Acesso vitalício</span>
             <span className="flex items-center gap-1"><Award className="w-3.5 h-3.5" /> Certificado incluído</span>
           </div>

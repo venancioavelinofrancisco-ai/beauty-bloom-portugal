@@ -44,7 +44,7 @@ const PricingSection = () => (
       >
         {/* Header */}
         <div className="bg-rose text-ivory p-8 text-center">
-          <span className="text-sm font-semibold uppercase tracking-widest opacity-80">Curso Completo</span>
+          <span className="text-sm font-semibold uppercase tracking-widest opacity-80">Curso 100% Online</span>
           <h3 className="font-display text-2xl font-bold mt-2">Automaquiagem — Do Básico ao Brilho</h3>
         </div>
 

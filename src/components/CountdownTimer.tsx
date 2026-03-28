@@ -30,10 +30,10 @@ const CountdownTimer = () => {
         { value: seconds, label: "Seg" },
       ].map((item) => (
         <div key={item.label} className="flex flex-col items-center">
-          <span className="bg-noir text-gold font-display text-2xl md:text-3xl font-bold rounded-lg w-16 h-16 flex items-center justify-center border border-gold/30 shadow-gold">
+          <span className="bg-ivory text-rose-deep font-display text-2xl md:text-3xl font-bold rounded-lg w-16 h-16 flex items-center justify-center border border-ivory/50 shadow-elevated">
             {String(item.value).padStart(2, "0")}
           </span>
-          <span className="text-ivory/60 text-xs mt-1 font-medium">{item.label}</span>
+          <span className="text-ivory/70 text-xs mt-1 font-medium">{item.label}</span>
         </div>
       ))}
     </div>

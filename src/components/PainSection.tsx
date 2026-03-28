@@ -8,7 +8,7 @@ const pains = [
 ];
 
 const PainSection = () => (
-  <section className="py-20 bg-ivory">
+  <section className="py-20 bg-rose-soft">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -16,10 +16,10 @@ const PainSection = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-noir mb-4">
           Identificas-te com isto?
         </h2>
-        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+        <p className="text-noir/60 text-lg max-w-xl mx-auto">
           Se alguma destas situações te soa familiar, este curso foi feito a pensar em ti.
         </p>
       </motion.div>
@@ -32,11 +32,11 @@ const PainSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-background rounded-2xl p-6 border border-gold-light hover:shadow-card hover:border-gold/30 transition-all"
+            className="bg-ivory rounded-2xl p-6 border border-ivory hover:shadow-card transition-all"
           >
             <span className="text-4xl mb-4 block">{pain.emoji}</span>
-            <h3 className="font-display text-xl font-bold text-foreground mb-2">{pain.title}</h3>
-            <p className="text-muted-foreground text-sm">{pain.desc}</p>
+            <h3 className="font-display text-xl font-bold text-noir mb-2">{pain.title}</h3>
+            <p className="text-noir/60 text-sm">{pain.desc}</p>
           </motion.div>
         ))}
       </div>

@@ -47,12 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold-glow))",
-          deep: "hsl(var(--gold-deep))",
-          glow: "hsl(var(--gold-glow))",
-          shimmer: "hsl(var(--gold-shimmer))",
-          light: "hsl(var(--gold-light))",
+        rose: {
+          DEFAULT: "hsl(var(--rose))",
+          light: "hsl(var(--rose-light))",
+          deep: "hsl(var(--rose-deep))",
+          soft: "hsl(var(--rose-soft))",
         },
         cream: "hsl(var(--cream))",
         noir: {

@@ -1,44 +1,83 @@
 import { motion } from "framer-motion";
-import { Play, Volume2 } from "lucide-react";
+import { Play, Volume2, Sparkles } from "lucide-react";
 import { useState } from "react";
+import vslMakeup1 from "@/assets/vsl-makeup-1.jpg";
+import vslMakeup2 from "@/assets/vsl-makeup-2.jpg";
+import vslMakeup3 from "@/assets/vsl-makeup-3.jpg";
 
 const VSLSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-dark relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(340, 70%, 85%) 0%, hsl(340, 60%, 90%) 50%, hsl(340, 50%, 95%) 100%)" }}>
       {/* Decorative gold accents */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
-      <div className="absolute top-20 right-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-48 h-48 bg-gold/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-64 h-64 rounded-full blur-3xl" style={{ background: "hsla(340, 60%, 70%, 0.2)" }} />
+      <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full blur-3xl" style={{ background: "hsla(43, 90%, 50%, 0.1)" }} />
 
       <div className="container relative z-10">
+        {/* Centered title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-12"
         >
-          <span className="inline-block bg-gold/20 text-gold text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-gold/30">
-            🎬 Vê com os teus próprios olhos
+          <span className="inline-flex items-center gap-2 bg-gold/20 text-gold-deep text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 border border-gold/30">
+            <Sparkles className="w-3.5 h-3.5" /> Vê com os teus próprios olhos
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-ivory mb-4">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-noir mb-4 text-center">
             Assiste à <span className="text-gradient-gold">transformação</span> em tempo real
           </h2>
-          <p className="text-ivory/60 text-lg max-w-2xl mx-auto">
+          <p className="text-noir/60 text-lg max-w-2xl mx-auto text-center">
             Descobre como as nossas alunas passam de zero a deslumbrantes em minutos — com produtos que encontras na tua cidade.
           </p>
         </motion.div>
 
+        {/* Image gallery of women doing makeup */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14"
+        >
+          {[
+            { src: vslMakeup1, label: "Técnica de contorno" },
+            { src: vslMakeup2, label: "Antes & Depois" },
+            { src: vslMakeup3, label: "Look completo" },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="relative rounded-2xl overflow-hidden shadow-elevated border-2 border-gold/30 group"
+            >
+              <img
+                src={item.src}
+                alt={item.label}
+                loading="lazy"
+                width={1920}
+                height={1080}
+                className="w-full h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-noir/80 to-transparent p-4">
+                <p className="text-ivory font-display font-bold text-sm">{item.label}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Video embed */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-gold border border-gold/20">
-            {/* Video embed placeholder — replace src with your VSL URL */}
+          <div className="relative rounded-3xl overflow-hidden shadow-gold border-2 border-gold/30">
             <div className="relative aspect-video bg-noir">
               <iframe
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&showinfo=0"
@@ -48,7 +87,6 @@ const VSLSection = () => {
                 className="absolute inset-0 w-full h-full"
               />
 
-              {/* Play overlay (hides once user interacts with iframe) */}
               {!isPlaying && (
                 <div
                   className="absolute inset-0 bg-noir/60 flex flex-col items-center justify-center cursor-pointer group z-10"
@@ -68,18 +106,15 @@ const VSLSection = () => {
                 </div>
               )}
             </div>
-
-            {/* Gold border glow */}
-            <div className="absolute -inset-px rounded-3xl border border-gold/20 pointer-events-none" />
           </div>
 
-          {/* Social proof under video */}
+          {/* Social proof */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center gap-6 mt-8 text-ivory/50 text-sm"
+            className="flex flex-wrap items-center justify-center gap-6 mt-8 text-noir/50 text-sm"
           >
             <span className="flex items-center gap-2">
               <span className="text-gold">▶</span> 12.847 visualizações

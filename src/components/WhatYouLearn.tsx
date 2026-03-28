@@ -13,7 +13,7 @@ const items = [
 ];
 
 const WhatYouLearn = () => (
-  <section className="py-20 bg-gradient-hero">
+  <section className="py-20 bg-cream">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -37,10 +37,10 @@ const WhatYouLearn = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
-            className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-soft"
+            className="flex items-start gap-3 bg-background rounded-xl p-4 shadow-soft border border-gold-light"
           >
-            <span className="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-0.5">
-              <Check className="w-4 h-4 text-primary-foreground" />
+            <span className="flex-shrink-0 w-6 h-6 bg-gradient-gold rounded-full flex items-center justify-center mt-0.5">
+              <Check className="w-4 h-4 text-noir" />
             </span>
             <span className="text-foreground font-medium">{item}</span>
           </motion.div>

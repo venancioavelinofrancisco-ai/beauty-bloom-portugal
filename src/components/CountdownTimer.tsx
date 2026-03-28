@@ -7,7 +7,6 @@ const CountdownTimer = () => {
       const diff = Math.max(0, Math.floor((parseInt(saved) - Date.now()) / 1000));
       return diff;
     }
-    // 48 hours from now
     const end = Date.now() + 48 * 60 * 60 * 1000;
     localStorage.setItem("countdown-end", end.toString());
     return 48 * 60 * 60;
@@ -31,10 +30,10 @@ const CountdownTimer = () => {
         { value: seconds, label: "Seg" },
       ].map((item) => (
         <div key={item.label} className="flex flex-col items-center">
-          <span className="bg-foreground text-primary-foreground font-display text-2xl md:text-3xl font-bold rounded-lg w-16 h-16 flex items-center justify-center">
+          <span className="bg-noir text-gold font-display text-2xl md:text-3xl font-bold rounded-lg w-16 h-16 flex items-center justify-center border border-gold/30 shadow-gold">
             {String(item.value).padStart(2, "0")}
           </span>
-          <span className="text-muted-foreground text-xs mt-1 font-medium">{item.label}</span>
+          <span className="text-ivory/60 text-xs mt-1 font-medium">{item.label}</span>
         </div>
       ))}
     </div>

@@ -47,15 +47,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        rose: {
-          deep: "hsl(var(--rose-deep))",
-          glow: "hsl(var(--rose-glow))",
-        },
-        cream: "hsl(var(--cream))",
         gold: {
-          DEFAULT: "hsl(var(--gold))",
+          DEFAULT: "hsl(var(--gold-glow))",
+          deep: "hsl(var(--gold-deep))",
+          glow: "hsl(var(--gold-glow))",
+          shimmer: "hsl(var(--gold-shimmer))",
           light: "hsl(var(--gold-light))",
         },
+        cream: "hsl(var(--cream))",
+        noir: {
+          DEFAULT: "hsl(var(--noir))",
+          soft: "hsl(var(--noir-soft))",
+        },
+        ivory: "hsl(var(--ivory))",
         urgency: "hsl(var(--urgency))",
       },
       fontFamily: {
